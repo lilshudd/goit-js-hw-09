@@ -34,6 +34,7 @@ const timerMinutes = document.querySelector('[data-minutes]');
 const timerSeconds = document.querySelector('[data-seconds]');
 
 let intervalId;
+let timeDifference;
 
 const options = {
   enableTime: true,
@@ -59,7 +60,7 @@ startButton.addEventListener('click', startTimer);
 function startTimer() {
   const selectedDate = new Date(datetimePicker.value).getTime();
   const currentDate = new Date().getTime();
-  const timeDifference = selectedDate - currentDate;
+  timeDifference = selectedDate - currentDate;
 
   if (timeDifference <= 0) {
     Notiflix.Notify.warning('Please choose a date in the future');

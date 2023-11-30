@@ -43,14 +43,6 @@ function handleFormSubmit(event) {
 
     promises.push(promise);
   }
-
-  Promise.all(promises)
-    .then(() => {
-      notiflix.Notify.info('All promises resolved!');
-    })
-    .catch(() => {
-      notiflix.Notify.warning('Some promises were rejected!');
-    });
 }
 
 const form = document.querySelector('.form');
